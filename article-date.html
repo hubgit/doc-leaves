@@ -33,8 +33,7 @@
     <!-- viewing -->
     <template if="{{ !editing }}">
       <template if="{{ storage &amp;&amp; !value }}">
-        <button class="btn btn-default btn-sm" on-click="{{ openEditor }}"><span class="glyphicon glyphicon-plus-sign"></span>
-          Add date</button>
+        <button class="btn btn-default btn-xs" on-click="{{ openEditor }}"><span class="glyphicon glyphicon-plus-sign"></span> Add date</button>
       </template>
 
       <time itemprop="datePublished" datetime="{{ value }}"

@@ -32,8 +32,7 @@
     <!-- viewing -->
     <template if="{{ !editing }}">
       <template if="{{ storage &amp;&amp; !value }}">
-        <button class="btn btn-default btn-sm" on-click="{{ openEditor }}"><span class="glyphicon glyphicon-plus-sign"></span>
-          Add title</button>
+        <button class="btn btn-default btn-xs" on-click="{{ openEditor }}"><span class="glyphicon glyphicon-plus-sign"></span> Add title</button>
       </template>
 
       <h1 itemprop="name" on-click="{{ openEditor }}" editable>{{ value }}</h1>

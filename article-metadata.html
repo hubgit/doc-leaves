@@ -52,7 +52,7 @@
         value="{{ metadata.date }}"
         storage="{{ storage }}"></article-date>
 
-      <ul>
+      <ul class="list-inline">
         <template repeat="{{ author, index in metadata.authors }}">
           <li data-index="{{ index }}" on-remove-author="{{ removeAuthor }}">
             <article-author
@@ -67,8 +67,9 @@
       <template if="{{ storage }}">
         <button
           type="button"
-          class="btn btn-default btn-sm"
-          on-click="{{ addAuthor }}"><span class="glyphicon glyphicon-plus-sign"></span>Add an author</button>
+          class="btn btn-default btn-xs"
+          on-click="{{ addAuthor }}"><span class="glyphicon glyphicon-plus-sign"></span>
+          <span class="glyphicon glyphicon-user"></span></button>
       </template>
 
       <ol>
@@ -82,12 +83,14 @@
         </template>
       </ol>
 
+      <!--
       <template if="{{ storage }}">
         <button
           type="button"
           class="btn btn-default btn-sm"
           on-click="{{ addAffiliation }}"><span class="glyphicon glyphicon-plus-sign"></span>Add an affiliation</button>
       </template>
+      -->
     </header>
   </template>
 
