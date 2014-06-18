@@ -3,20 +3,16 @@
 Polymer('article-metadata', {
   storage: '',
   ready: function() {
-    var matches = window.location.search.match(/db=([\w-]+)/);
+    this.metadata = {};
+  },
+  storageChanged: function() {
+    if (this.storage) {
+      var value = window.localStorage.getItem(this.storage);
 
-    if (matches) {
-      this.storage = matches[1] + '-article';
-    } else {
-      // TODO: load data file
+      this.metadata = JSON.parse(value) || {};
     }
-
-    var value = window.localStorage.getItem(this.storage);
-
-    this.metadata = JSON.parse(value) || {};
   },
   metadataChanged: function() {
-    console.log(this.metadata);
     var value = JSON.stringify(this.metadata);
     window.localStorage.setItem(this.storage, value);
   },
